@@ -1,0 +1,13 @@
+{
+  "name": "shippingrules/shippingrules",
+  "description": "Shipping classes, rate tables and packing rules for PrestaShop 9",
+  "type": "prestashop-module",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {"phpunit/phpunit": "^13.0", "friendsofphp/php-cs-fixer": "^3.0"},
+  "autoload": {"psr-4": {"ShippingRules\\": "src/"}},
+  "autoload-dev": {"psr-4": {"ShippingRules\\Tests\\": "tests/"}},
+  "config": {"sort-packages": true}
+}

@@ -1,0 +1,22 @@
+{
+	admin localhost:{$PSS_ADMIN_PORT}
+	storage file_system {$PSS_ENV}/run/caddy
+	log {
+		output file {$PSS_ENV}/log/caddy.log
+	}
+}
+
+http://localhost:{$PSS_PORT} {
+	root * {$PSS_ENV}/www/prestashop
+	encode gzip
+	log {
+		output file {$PSS_ENV}/log/access.log
+	}
+	route {
+		php_fastcgi /admin-dev/* 127.0.0.1:{$PSS_FPM_PORT} {
+			try_files {path} {path}/index.php /admin-dev/index.php
+		}
+		php_fastcgi 127.0.0.1:{$PSS_FPM_PORT}
+	}
+	file_server
+}

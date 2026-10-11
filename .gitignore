@@ -1,0 +1,13 @@
+/vendor/
+/.composer-cache/
+/.phpunit.cache/
+/.php-cs-fixer.cache
+/.omp/
+/dist/
+/config.xml
+/config_*.xml
+.DS_Store
+
+# Store exports and rate sheets never belong in the repo (it may be public).
+/*.csv
+/*.sql
